@@ -1,0 +1,45 @@
+buildscript {
+    dependencies {
+        classpath 'com.h2database:h2:2.1.214'
+    }
+}
+
+plugins {
+    id 'java'
+    id "org.flywaydb.flyway" version "9.8.1"
+}
+
+flyway {
+    url = 'jdbc:h2:C:/goit/dev/dev-mod-11/mydb'
+    user = ''
+    password = ''
+}
+
+group 'org.example'
+version ''
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    implementation 'com.h2database:h2:2.1.214'
+
+    // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
+    implementation 'org.flywaydb:flyway-core:9.16.3'
+
+    // https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
+    implementation group: 'org.hibernate.orm', name: 'hibernate-core', version: '6.2.3.Final'
+}
+
+test {
+    useJUnitPlatform()
+}

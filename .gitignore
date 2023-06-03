@@ -1,0 +1,11 @@
+.idea
+*.iml
+/out
+/build
+.iws
+*.ipr
+HELP.md
+target/
+.DS_Store
+mydb.mv.db
+mydb.trace.db
